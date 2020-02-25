@@ -44,7 +44,22 @@ $(document).ready(function() {
         localStorage.setItem(eventId, eventText);
     });
 });
-
+// create a function to update the colors by past present and future
+    function timedColors() {
+    var currentTime = new Date().getHours();
+    for (var i = 9; i < 18; i++) {
+        console.log(currentTime, $(`#${i}`).data("time"));
+        if ($(`#${i}`).data("time") == currentTime) {
+            $(`#text${i}`).addClass("present");
+        } else if (currentTime < $(`#${i}`).data("time")) {
+            $(`#text${i}`).addClass("future");
+        }
+    }
+}
+// setting a function that will update the color depending of the time if its pass present or future and call the timedColors function
+setInterval(function() {
+    timedColors();
+}, 1000);
 
 
 
