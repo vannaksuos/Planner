@@ -5,7 +5,7 @@ function getLocalStorage(key) {
         $(`#text${key}`).text(value);
     }
 }
-
+// this is to get the colums and rows ready before anything on the page 
 $(document).ready(function() {
     $("#currentDay").text(moment().format("dddd, MMMM Do"));
     for (let i = 9; i < 18; i++) {
@@ -43,7 +43,7 @@ $(document).ready(function() {
     });
 });
 // create a function to update the colors by past present and future
-    function updateColors() {
+    function timedColors() {
     var currentTime = new Date().getHours();
     for (var i = 9; i < 18; i++) {
         console.log(currentTime, $(`#${i}`).data("time"));
@@ -54,9 +54,9 @@ $(document).ready(function() {
         }
     }
 }
-// setting a fucntion that will update the color depending of the time if its pass present or future and call the updateColors function
+// setting a function that will update the color depending of the time if its pass present or future and call the timedColors function
 setInterval(function() {
-    updateColors();
+    timedColors();
 }, 1000);
 
 
