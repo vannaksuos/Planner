@@ -29,7 +29,7 @@ $(document).ready(function() {
          $(".saveBtn").height(70).width(70);
          // resizing id tasks 
          $(".tasks").height(50).width (700);
-        
+        // getting local storage"text"
         getStorage(i);
         
     }
