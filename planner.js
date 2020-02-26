@@ -44,9 +44,9 @@ $(document).ready(function() {
     // this is the saveBTn event listener, when click it will save whats in this description text area
     var saveBtn = $('.saveBtn');
     saveBtn.on('click', function() {
-        let eventId = $(this).attr('id');
-        let eventText = $(this).parent().siblings().children('.tasks').val();
-        localStorage.setItem(eventId, eventText);
+        var taskId = $(this).attr('id');
+        var tasksText = $(this).parent().siblings().children('.tasks').val();
+        localStorage.setItem(taskId, tasksText);
     });
 });
 // create a function to update the colors by past present and future
