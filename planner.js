@@ -5,10 +5,10 @@ function getLocalStorage(key) {
         $(`#text${key}`).text(value);
     }
 }
-// this is to get the colums and rows ready before anything on the page 
+// this is to get the columns and rows ready before anything on the page 
 $(document).ready(function() {
     $("#currentDay").text(moment().format("dddd, MMMM Do"));
-    // creating rows and colums with a for loop
+    // creating rows and columns with a for loop thats attached to the moment.js function
     for (let i = 9; i < 18; i++) {
         // creating a row
         var row = $(`<div data-time=${i} id='${i}' class="row">`);
@@ -24,6 +24,10 @@ $(document).ready(function() {
         row.append(col3);
         //  adding rows to container
         $(".container").append(row);
+        // resizing the saveBtn
+         $(".saveBtn").height(70).width(70);
+         // resizing id tasks 
+         $(".tasks").height(50).width (700);
         getLocalStorage(i);
         
     }
@@ -60,7 +64,5 @@ $(document).ready(function() {
 setInterval(function() {
     timedColors();
 }, 1000);
-
-
 
 
