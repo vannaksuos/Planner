@@ -1,6 +1,6 @@
 // this function will get all the key from local storage
 function getLocalStorage(key) {
-    let value = localStorage.getItem(key);
+    var value = localStorage.getItem(key);
     if (value) {
         $(`#text${key}`).text(value);
     }
