@@ -28,10 +28,11 @@ $(document).ready(function() {
          $(".saveBtn").height(70).width(70);
          // resizing id tasks 
          $(".tasks").height(50).width (700);
+        
         getLocalStorage(i);
         
     }
-
+    // this function is to set the time to be 12 hours format not 24 hours
     function pmAM(hours) {
         var ampm = hours >= 12 ? 'pm' : 'am';
         hours = hours % 12;
