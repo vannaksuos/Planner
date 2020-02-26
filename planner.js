@@ -14,11 +14,11 @@ $(document).ready(function() {
         // creating a row
         var row = $(`<div data-time=${i} id='${i}' class="row">`);
         // creating a column
-        var col1 = $('<div class="col-sm-2"> <p class="hour">' + pmAM(i) + '</p>');
+        var col1 = $('<div class="col-sm-1"> <p class="hour">' + pmAM(i) + '</p>');
         //creating column 2
-        var col2 = $(`<div class="col-sm-8 past"><textarea  id=text${i} class="tasks" placeholder="Add event here..."></textarea>`);
+        var col2 = $(`<div class="col-sm-10 past"><textarea  id=text${i} class="tasks" placeholder="Add event here..."></textarea>`);
         //creating column 3
-        var col3 = $(`<div class="col-sm-2"><button class="saveBtn" id=${i}><i class="fas fa-save"></i></button>`)
+        var col3 = $(`<div class="col-sm-1"><button class="saveBtn" id=${i}><i class="fas fa-save"></i></button>`)
         // appending col to row
         row.append(col1);
         row.append(col2);
@@ -28,7 +28,7 @@ $(document).ready(function() {
         // resizing the saveBtn
          $(".saveBtn").height(70).width(70);
          // resizing id tasks 
-         $(".tasks").height(50).width (700);
+         $(".tasks").height(50).width (900);
         // getting local storage"text"
         getStorage(i);
         
@@ -54,9 +54,9 @@ $(document).ready(function() {
     function timedColors() {
     var currentTime = new Date().getHours();
     for (var i = 9; i < 18; i++) {
-          if ($(`#${i}`).data("time") == currentTime) {
+          if($(`#${i}`).data("time") == currentTime) {
             $(`#text${i}`).addClass("present");
-        } else if (currentTime < $(`#${i}`).data("time")) {
+        } else if(currentTime < $(`#${i}`).data("time")) {
             $(`#text${i}`).addClass("future");
         }
     }
