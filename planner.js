@@ -35,10 +35,10 @@ $(document).ready(function() {
     }
     // this function is to set the time to be 12 hours format not 24 hours
     function pmAM(hours) {
-        var ampm = hours >= 12 ? 'pm' : 'am';
+        var amPm = hours >= 12 ? 'pm' : 'am';
         hours = hours % 12;
         hours = hours ? hours : 12;
-        return hours + ampm;
+        return hours + amPm;
     }
     pmAM();
 
