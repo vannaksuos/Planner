@@ -7,8 +7,9 @@ function getLocalStorage(key) {
 }
 // this is to get the columns and rows ready before anything on the page 
 $(document).ready(function() {
+    // selecting id currentDay and change the text to the date from moment.js format
     $("#currentDay").text(moment().format("dddd, MMMM Do"));
-    // creating rows and columns with a for loop thats attached to the moment.js function
+    // creating rows and columns with a for loop 
     for (let i = 9; i < 18; i++) {
         // creating a row
         var row = $(`<div data-time=${i} id='${i}' class="row">`);
@@ -60,7 +61,7 @@ $(document).ready(function() {
         }
     }
 }
-// setting a function that will update the color depending of the time if its pass present or future and call the timedColors function
+// setting a function that will update the color depending of the time if its pass, present or future and call the timedColors function
 setInterval(function() {
     timedColors();
 }, 1000);
