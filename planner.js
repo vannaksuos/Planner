@@ -1,4 +1,4 @@
-// this function will get all the key from local storage
+// this function will get all the text saved in the textarea back after refreshing page
 function getLocalStorage(key) {
     var value = localStorage.getItem(key);
     if (value) {
@@ -49,12 +49,11 @@ $(document).ready(function() {
         localStorage.setItem(taskId, tasksText);
     });
 });
-// create a function to update the colors by past present and future
+//  function to update the colors by past, present and future
     function timedColors() {
     var currentTime = new Date().getHours();
     for (var i = 9; i < 18; i++) {
-        console.log(currentTime, $(`#${i}`).data("time"));
-        if ($(`#${i}`).data("time") == currentTime) {
+          if ($(`#${i}`).data("time") == currentTime) {
             $(`#text${i}`).addClass("present");
         } else if (currentTime < $(`#${i}`).data("time")) {
             $(`#text${i}`).addClass("future");
