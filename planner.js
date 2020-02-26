@@ -10,7 +10,7 @@ $(document).ready(function() {
     // selecting id currentDay and change the text to the date from moment.js
     $("#currentDay").text(moment().format("dddd, MMMM Do"));
     // creating rows and columns with a for loop 
-    for (let i = 9; i < 18; i++) {
+    for (var i = 9; i < 18; i++) {
         // creating a row
         var row = $(`<div data-time=${i} id='${i}' class="row">`);
         // creating a column
