@@ -1,5 +1,5 @@
 // this function will get all the text saved in the textarea back after refreshing page
-function getLocalStorage(key) {
+function getStorage(key) {
     var value = localStorage.getItem(key);
     if (value) {
         $(`#text${key}`).text(value);
@@ -7,7 +7,7 @@ function getLocalStorage(key) {
 }
 // this is to get the columns and rows ready before anything on the page 
 $(document).ready(function() {
-    // selecting id currentDay and change the text to the date from moment.js format
+    // selecting id currentDay and change the text to the date from moment.js
     $("#currentDay").text(moment().format("dddd, MMMM Do"));
     // creating rows and columns with a for loop 
     for (let i = 9; i < 18; i++) {
@@ -30,7 +30,7 @@ $(document).ready(function() {
          // resizing id tasks 
          $(".tasks").height(50).width (700);
         
-        getLocalStorage(i);
+        getStorage(i);
         
     }
     // this function is to set the time to be 12 hours format not 24 hours
