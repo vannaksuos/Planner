@@ -42,7 +42,7 @@ $(document).ready(function() {
     }
     pmAM();
 
-    // this is the saveBTn event listener, when click it will save whats in this description text area
+    // this is the saveBTn event listener, when click it will save whats in this description text area into local storage
     var saveBtn = $('.saveBtn');
     saveBtn.on('click', function() {
         var taskId = $(this).attr('id');
